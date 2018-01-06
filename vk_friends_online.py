@@ -34,7 +34,9 @@ def get_online_friends(login, password):
     )
     api_connection_context = vk.API(session)
     online_friends_id_list = api_connection_context.friends.getOnline()
-    online_friends_list = api_connection_context.users.get(user_ids=online_friends_id_list)
+    online_friends_list = api_connection_context.users.get(
+        user_ids=online_friends_id_list
+    )
     return online_friends_list
 
 
@@ -52,10 +54,8 @@ def print_online_friends(online_friends_list):
 
 
 if __name__ == '__main__':
-    #login = get_user_login()
-    #password = get_user_password()
-    login = "aligang@yandex.ru"
-    password = "90013403!Qaz2wSX"
+    login = get_user_login()
+    password = get_user_password()
     try:
         friends_online_list = get_online_friends(login, password)
     except vk.exceptions.VkAuthError:
