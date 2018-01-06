@@ -10,7 +10,7 @@
 ```
 
 ## 3.Где можно скачать  
-Можно форкнуть здесь - [частота слов](https://github.com/aligang/8_vk_friends_online)  
+Можно форкнуть здесь - [кто из друзей онлайн ?](https://github.com/aligang/8_vk_friends_online)  
 и затем скачать 
 ```
 git clone https://github.com/<юзернейм-аккаунта-на-гите>/8_vk_friends_online

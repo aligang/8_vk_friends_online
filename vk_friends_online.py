@@ -30,20 +30,17 @@ def get_online_friends(login, password):
         app_id=APP_ID,
         user_login=login,
         user_password=password,
+        scope="friends"
     )
     api_connection_context = vk.API(session)
-    friends = api_connection_context.friends.get(fields="online")
-    online_friends_list = []
-    positive_online_status = 1
-    for friend in friends:
-        if friend["online"] == positive_online_status:
-            online_friends_list.append(friend)
+    online_friends_id_list = api_connection_context.friends.getOnline()
+    online_friends_list = api_connection_context.users.get(user_ids=online_friends_id_list)
     return online_friends_list
 
 
 def print_online_friends(online_friends_list):
     print(
-        "--------------------------------------"
+        "-------------------------------------"
         "\nКто из Ваших друзей сейчас на связи :"
         "\n-------------------------------------"
     )
@@ -55,8 +52,10 @@ def print_online_friends(online_friends_list):
 
 
 if __name__ == '__main__':
-    login = get_user_login()
-    password = get_user_password()
+    #login = get_user_login()
+    #password = get_user_password()
+    login = "aligang@yandex.ru"
+    password = "90013403!Qaz2wSX"
     try:
         friends_online_list = get_online_friends(login, password)
     except vk.exceptions.VkAuthError:
