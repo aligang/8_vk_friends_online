@@ -4,12 +4,9 @@
 import vk
 import getpass
 import sys
-import os
 
 
 APP_ID = 6319840
-# чтобы получить app_id,
-# нужно зарегистрировать своё приложение на https://vk.com/dev
 
 
 def get_user_login():
@@ -60,5 +57,6 @@ if __name__ == '__main__':
         friends_online_list = get_online_friends(login, password)
     except vk.exceptions.VkAuthError:
         sys.exit("Указаны неверные логин/пароль."
-                 "\nПерезапустите программу и укажите корректные креденшилы")
+                 "\nПерезапустите программу и "
+                 "укажите корректные логин и пароль")
     print_online_friends(friends_online_list)
