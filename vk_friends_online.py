@@ -45,9 +45,9 @@ def print_online_friends(online_friends_list):
     )
     for friend_online in online_friends_list:
         print("{} {}".format(
-                friend_online["first_name"],
-                friend_online["last_name"]
-            ))
+            friend_online["first_name"],
+            friend_online["last_name"]
+        ))
 
 
 if __name__ == '__main__':
